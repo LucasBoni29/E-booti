@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-booti</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom shadow-sm mb-3">
+        <div class="container">
+            <a class="navbar-brand" href="#"><strong>E-booti</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Em breve</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Sobre nós</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Mais vendidos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">PC</a></li>
+                            <li><a class="dropdown-item" href="#">Games</a></li>
+                            <li>
+                                <!-- <hr class="dropdown-divider"> -->
+                            </li>
+                            <li><a class="dropdown-item" href="#">Domésticos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="align-self-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">Cadastrar-me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link ">
+                                <i class="bi bi-cart3"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+
+    </header>
+
+    <main class="container">
+        <div class="row mt-2">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="título" aria-label="título">
+            </div>
+            <nav aria-label="..." class="col">
+                <ul class="pagination pagination-sm justify-content-end">
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">1</span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                </ul>
+            </nav>
+            <div class="col-3">
+                <select class="form-select" aria-label="selecione a categoria">
+                    <option selected>Ordenar pelo nome</option>
+                    <option value="1">Ordenar pelo menor preço</option>
+                    <option value="2">Ordernar pelo maior preço</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mx-auto my-2 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card text-center bg-light">
+                    <a href="" class="position-absolute right-0 p-2 text-danger">
+                        <i class="bi bi-suit-heart"></i>
+                    </a>
+                    <img class="card-img-top" src="/assets/img/produtos/amdRyzen.jpg" alt="Processado AMD Ryzen">
+
+                    <div class="card-header">
+                        R$ 300,00
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">AMD Ryzen 7 5700x</h5>
+                        <p class="card-text">
+                            Processador AMD Ryzen 7 5700X, 3.4GHz (4.6GHz Max Turbo),
+                            Cache 36MB, AM4, Sem Vídeo - 100-100000926WOF
+                        </p>
+                    </div>
+
+                    <div class="card-footer">
+                        <form class="d-block">
+                            <button class="btn btn-success">
+                                Adicionar ao carrinho
+                            </button>
+                        </form>
+                        <small class="text-danger">240 em estoque</small>
+                    </div> <!-- card-footer -->
+                </div> <!-- card -->
+            </div> <!-- col -->
+
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card text-center bg-light">
+                    <a href="" class="position-absolute right-0 p-2 text-danger">
+                        <i class="bi bi-suit-heart"></i>
+                    </a>
+                    <img class="card-img-top" src="/assets/img/produtos/amdRyzen.jpg" alt="Processado AMD Ryzen">
+
+                    <div class="card-header">
+                        R$ 300,00
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">AMD Ryzen 7 5700x</h5>
+                        <p class="card-text">
+                            Processador AMD Ryzen 7 5700X, 3.4GHz (4.6GHz Max Turbo),
+                            Cache 36MB, AM4, Sem Vídeo - 100-100000926WOF
+                        </p>
+                    </div>
+
+                    <div class="card-footer">
+                        <form class="d-block">
+                            <button class="btn btn-success">
+                                Adicionar ao carrinho
+                            </button>
+                        </form>
+                        <small class="text-danger">240 em estoque</small>
+                    </div> <!-- card-footer -->
+                </div> <!-- card -->
+            </div> <!-- col -->
+
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card text-center bg-light">
+                    <a href="" class="position-absolute right-0 p-2 text-danger">
+                        <i class="bi bi-suit-heart"></i>
+                    </a>
+                    <img class="card-img-top" src="/assets/img/produtos/amdRyzen.jpg" alt="Processado AMD Ryzen">
+
+                    <div class="card-header">
+                        R$ 300,00
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">AMD Ryzen 7 5700x</h5>
+                        <p class="card-text">
+                            Processador AMD Ryzen 7 5700X, 3.4GHz (4.6GHz Max Turbo),
+                            Cache 36MB, AM4, Sem Vídeo - 100-100000926WOF
+                        </p>
+                    </div>
+
+                    <div class="card-footer">
+                        <form class="d-block">
+                            <button class="btn btn-success">
+                                Adicionar ao carrinho
+                            </button>
+                        </form>
+                        <small class="text-danger">240 em estoque</small>
+                    </div> <!-- card-footer -->
+                </div> <!-- card -->
+            </div> <!-- col -->
+            
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card text-center bg-light">
+                    <a href="" class="position-absolute right-0 p-2 text-danger">
+                        <i class="bi bi-suit-heart"></i>
+                    </a>
+                    <img class="card-img-top" src="/assets/img/produtos/amdRyzen.jpg" alt="Processado AMD Ryzen">
+
+                    <div class="card-header">
+                        R$ 300,00
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">AMD Ryzen 7 5700x</h5>
+                        <p class="card-text">
+                            Processador AMD Ryzen 7 5700X, 3.4GHz (4.6GHz Max Turbo),
+                            Cache 36MB, AM4, Sem Vídeo - 100-100000926WOF
+                        </p>
+                    </div>
+
+                    <div class="card-footer">
+                        <form class="d-block">
+                            <button class="btn btn-success">
+                                Adicionar ao carrinho
+                            </button>
+                        </form>
+                        <small class="text-danger">240 em estoque</small>
+                    </div> <!-- card-footer -->
+                </div> <!-- card -->
+            </div> <!-- col -->
+
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card text-center bg-light">
+                    <a href="" class="position-absolute right-0 p-2 text-danger">
+                        <i class="bi bi-suit-heart"></i>
+                    </a>
+                    <img class="card-img-top" src="/assets/img/produtos/amdRyzen.jpg" alt="Processado AMD Ryzen">
+
+                    <div class="card-header">
+                        R$ 300,00
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">AMD Ryzen 7 5700x</h5>
+                        <p class="card-text">
+                            Processador AMD Ryzen 7 5700X, 3.4GHz (4.6GHz Max Turbo),
+                            Cache 36MB, AM4, Sem Vídeo - 100-100000926WOF
+                        </p>
+                    </div>
+
+                    <div class="card-footer">
+                        <form class="d-block">
+                            <button class="btn btn-success">
+                                Adicionar ao carrinho
+                            </button>
+                        </form>
+                        <small class="text-danger">240 em estoque</small>
+                    </div> <!-- card-footer -->
+                </div> <!-- card -->
+            </div> <!-- col -->
+
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card text-center bg-light">
+                    <a href="" class="position-absolute right-0 p-2 text-danger">
+                        <i class="bi bi-suit-heart"></i>
+                    </a>
+                    <img class="card-img-top" src="/assets/img/produtos/amdRyzen.jpg" alt="Processado AMD Ryzen">
+
+                    <div class="card-header">
+                        R$ 300,00
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">AMD Ryzen 7 5700x</h5>
+                        <p class="card-text">
+                            Processador AMD Ryzen 7 5700X, 3.4GHz (4.6GHz Max Turbo),
+                            Cache 36MB, AM4, Sem Vídeo - 100-100000926WOF
+                        </p>
+                    </div>
+
+                    <div class="card-footer">
+                        <form class="d-block">
+                            <button class="btn btn-success">
+                                Adicionar ao carrinho
+                            </button>
+                        </form>
+                        <small class="text-danger">240 em estoque</small>
+                    </div> <!-- card-footer -->
+                </div> <!-- card -->
+            </div> <!-- col -->
+
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card text-center bg-light">
+                    <a href="" class="position-absolute right-0 p-2 text-danger">
+                        <i class="bi bi-suit-heart"></i>
+                    </a>
+                    <img class="card-img-top" src="/assets/img/produtos/amdRyzen.jpg" alt="Processado AMD Ryzen">
+
+                    <div class="card-header">
+                        R$ 300,00
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">AMD Ryzen 7 5700x</h5>
+                        <p class="card-text">
+                            Processador AMD Ryzen 7 5700X, 3.4GHz (4.6GHz Max Turbo),
+                            Cache 36MB, AM4, Sem Vídeo - 100-100000926WOF
+                        </p>
+                    </div>
+
+                    <div class="card-footer">
+                        <form class="d-block">
+                            <button class="btn btn-success">
+                                Adicionar ao carrinho
+                            </button>
+                        </form>
+                        <small class="text-danger">240 em estoque</small>
+                    </div> <!-- card-footer -->
+                </div> <!-- card -->
+            </div> <!-- col -->
+
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card text-center bg-light">
+                    <a href="" class="position-absolute right-0 p-2 text-danger">
+                        <i class="bi bi-suit-heart"></i>
+                    </a>
+                    <img class="card-img-top" src="/assets/img/produtos/amdRyzen.jpg" alt="Processado AMD Ryzen">
+
+                    <div class="card-header">
+                        R$ 300,00
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">AMD Ryzen 7 5700x</h5>
+                        <p class="card-text">
+                            Processador AMD Ryzen 7 5700X, 3.4GHz (4.6GHz Max Turbo),
+                            Cache 36MB, AM4, Sem Vídeo - 100-100000926WOF
+                        </p>
+                    </div>
+
+                    <div class="card-footer">
+                        <form class="d-block">
+                            <button class="btn btn-success">
+                                Adicionar ao carrinho
+                            </button>
+                        </form>
+                        <small class="text-danger">240 em estoque</small>
+                    </div> <!-- card-footer -->
+                </div> <!-- card -->
+            </div> <!-- col -->
+
+        </div> <!-- row -->
+
+    </main>
+
+    <footer class="border-top fixed-bottom text-muted bg-light">
+        <div class="container">
+            <div class="row py-2">
+                <div class="col-12 col-md col-md-4 text-center text-md-left">
+                    &copy; 2023 - E-booti
+                </div>
+                <div class="col-12 col-md col-md-4 text-center">
+                    <a href="#" class="text-decoration-none text-dark">Política de privacidade</a>
+                </div>
+                <div class="col-12 col-md col-md-4 text-center text-md-right">
+                    <a href="#" class="text-decoration-none text-dark">Aprendendo a criar o footer correto</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
