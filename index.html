@@ -52,7 +52,7 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link active">Cadastrar-me</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modalProduto">
                             <a href="#" class="nav-link active">Cadastrar produto</a>
                         </li>
                         <li class="nav-item">
@@ -102,23 +102,22 @@
     </main>
 
     <!-- MODAL -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalProduto" tabindex="-1" aria-labelledby="modalProdutoLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastro Produto</h1>
+              <h1 class="modal-title fs-5" id="modalProdutoLabel">Cadastro Produto</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form>
-                <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="imgProduto">
-                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                <div class="mb-3">
+                    <label for="imgProduto" class="col-form-label">Link da imagem do produto:</label>
+                    <input type="text" class="form-control" id="imgProduto" placeholder="Colar o link da imagem aqui">
                 </div>
-                <div class="input-group">
-                    <input type="text" id="vlProduto" class="form-control" aria-label="Valor em reais com ponto e duas casas decimais">
-                    <span class="input-group-text">R$</span>
-                    <span class="input-group-text">0.00</span>
+                <div class="mb-3">
+                    <label for="dsImgProduto" class="col-form-label">Descrição da imagem do produto:</label>
+                    <input type="text" class="form-control" id="dsImgProduto">
                 </div>
                 <div class="mb-3">
                     <label for="nmProduto" class="col-form-label">Nome do produto:</label>
@@ -128,15 +127,23 @@
                   <label for="dsProduto" class="col-form-label">Descrição do produto:</label>
                   <textarea class="form-control" id="dsProduto"></textarea>
                 </div>
+                <div class="mb-2">
+                    <label for="vlProduto" class="col-form-label">Valor do produto</label>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" id="vlProduto" class="form-control" aria-label="Valor em reais com ponto e duas casas decimais">
+                    <span class="input-group-text">R$</span>
+                    <span class="input-group-text">0.00</span>
+                </div>
                 <div class="col-12">
                     <label for="qtdEstoque" class="col-form-label">Qtd. Estoque:</label>
-                    <input id="qtEstoque" type="number" class="form-control" aria-label="Qtd. Estoque">
+                    <input id="qtdEstoque" type="number" class="form-control" aria-label="Qtd. Estoque">
                 </div>
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Send message</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              <button type="button" id="salvar" class="btn btn-primary">Salvar</button>
             </div>
           </div>
         </div>
@@ -160,6 +167,7 @@
         </div>
     </footer>
 
+    <script src="./assets/js/crud.js"></script>
 </body>
 
 </html>
