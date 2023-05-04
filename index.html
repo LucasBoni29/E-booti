@@ -76,7 +76,7 @@
     <main class="container">
         <div class="row mt-2">
             <div class="col">
-                <input type="text" class="form-control" placeholder="título" aria-label="título">
+                <input type="text" class="form-control" placeholder="Pesquisar por nome" aria-label="Pesquisar por nome">
             </div>
             <nav aria-label="..." class="col">
                 <ul class="pagination pagination-sm justify-content-end">
@@ -131,9 +131,9 @@
                     <label for="vlProduto" class="col-form-label">Valor do produto</label>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text" id="vlProduto" class="form-control" aria-label="Valor em reais com ponto e duas casas decimais">
+                    <input type="number" id="vlProduto" class="form-control" aria-label="Valor em reais com ponto e duas casas decimais">
                     <span class="input-group-text">R$</span>
-                    <span class="input-group-text">0.00</span>
+                    <span class="input-group-text" id="txtVlProduto">0.00</span>
                 </div>
                 <div class="col-12">
                     <label for="qtdEstoque" class="col-form-label">Qtd. Estoque:</label>
