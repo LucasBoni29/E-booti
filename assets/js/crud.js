@@ -1,6 +1,23 @@
-document.querySelector("#salvar").addEventListener("click" , cadastrar)
+document.querySelector("#salvar").addEventListener("click", cadastrar)
 
-// TODO Testar a abertura do modal e passar os valores corretamente para as variáveis
+let listProdutos = []
+
+//Carregar os registros salvos na memória do navegador
+window.addEventListener("load", () => {
+    //Transforma os registros salvos em String para JSON
+    listProdutos = JSON.parse(localStorage.getItem("listProdutos"))  || []
+    loadPage()
+})
+
+function loadPage(){
+    //Limpando o array para não repetir os registros
+    document.querySelector("#catalogo").innerHTML = ""
+    listProdutos.forEach((obj) => {
+        // Adicionando tags dentro do html passando a lista de valores para a função responsável por criar o produto
+        document.querySelector("#catalogo")
+        .innerHTML += criarCardProduto(obj)
+    })
+}
 
 function cadastrar(){
     // Acessando os campos do modal do html e pegando seus valores
@@ -10,6 +27,7 @@ function cadastrar(){
     const nmProduto = document.querySelector("#nmProduto").value
     const dsProduto = document.querySelector("#dsProduto").value
     const qtdEstoque = document.querySelector("#qtdEstoque").value
+    const modal = bootstrap.Modal.getInstance(document.querySelector("#modalProduto"))
 
     // Criando uma variável para armazenar toda a lista de variáveis do modal
     const produto = {
@@ -21,9 +39,33 @@ function cadastrar(){
         qtdEstoque
     }
 
-    // Adicionando tags dentro do html passando a lista de valores para a função responsável por criar o produto
-    document.querySelector("#catalogo")
-        .innerHTML += criarCardProduto(produto) 
+    //Validando os campos
+    if(!isValid(produto.imgProduto, document.querySelector("#imgProduto"))) return
+    if(!isValid(produto.dsImgProduto, document.querySelector("#dsImgProduto"))) return
+    if(!isValid(produto.nmProduto, document.querySelector("#nmProduto"))) return
+    if(!isValid(produto.dsProduto, document.querySelector("#dsProduto"))) return
+    if(!isValid(produto.vlProduto, document.querySelector("#vlProduto"))) return
+    if(!isValid(produto.qtdEstoque, document.querySelector("#qtdEstoque"))) return
+
+    listProdutos.push(produto)
+    //Salvar na memória do navegador os produtos em JSON
+    localStorage.setItem("listProdutos", JSON.stringify(listProdutos))
+
+    loadPage()
+
+    modal.hide()
+}
+
+function isValid(valor, campo){
+    if(valor.length == 0){
+        campo.classList.add("is-invalid")
+        campo.classList.remove("is-valid")
+        return false
+    }else{
+        campo.classList.add("is-valid")
+        campo.classList.remove("is-invalid")
+        return true
+    }
 }
 
 // Removendo o card pela hierarquia
