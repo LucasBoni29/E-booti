@@ -19,7 +19,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom shadow-sm mb-3">
         <div class="container">
-            <a class="navbar-brand" href="#"><strong>E-booti</strong></a>
+            <a class="navbar-brand" href="#" onclick="loadPage()"><strong>E-booti</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -60,8 +60,13 @@
                             <a href="#" class="nav-link active">Entrar</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link ">
-                                <i class="bi bi-cart3"></i>
+                            <a href="#" id="carrinho" class="nav-link ">
+                                <i class="bi bi-cart3 position-relative">
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        <!-- ADICIONAR UMA VARIÁVEL QUE CONTA A QUANTIDADE DE ITENS QUE FORAM PARA O CARRINHO -->
+                                        1
+                                    <span class="visually-hidden">unread messages</span>
+                                </i>
                             </a>
                         </li>
                     </ul>
@@ -90,9 +95,9 @@
             </nav>
             <div class="col-3">
                 <select class="form-select" aria-label="selecione a categoria">
-                    <option selected>Ordenar pelo nome</option>
-                    <option value="1">Ordenar pelo menor preço</option>
-                    <option value="2">Ordernar pelo maior preço</option>
+                    <option id="ordenar_nome" selected>Ordenar pelo nome</option>
+                    <option id="ordenar_menor_preco" value="1">Ordenar pelo menor preço</option>
+                    <option id="ordenar_maior_preco" value="2">Ordernar pelo maior preço</option>
                 </select>
             </div>
         </div>
@@ -169,6 +174,7 @@
     </footer>
 
     <script src="./assets/js/crud.js"></script>
+    <script src="./assets/js/filtro.js"></script>
 </body>
 
 </html>

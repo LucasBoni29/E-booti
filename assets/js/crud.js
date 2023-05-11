@@ -1,22 +1,26 @@
 document.querySelector("#salvar").addEventListener("click", cadastrar)
 
-let listProdutos = []
+let catalogo = []
 
 //Carregar os registros salvos na memória do navegador
 window.addEventListener("load", () => {
     //Transforma os registros salvos em String para JSON
-    listProdutos = JSON.parse(localStorage.getItem("listProdutos"))  || []
+    catalogo = JSON.parse(localStorage.getItem("catalogo"))  || []
     loadPage()
 })
 
 function loadPage(){
-    //Limpando o array para não repetir os registros
+    localStorage.setItem("catalogo", JSON.stringify(catalogo))
     document.querySelector("#catalogo").innerHTML = ""
-    listProdutos.forEach((obj) => {
-        // Adicionando tags dentro do html passando a lista de valores para a função responsável por criar o produto
-        document.querySelector("#catalogo")
-        .innerHTML += criarCardProduto(obj)
-    })
+    catalogo.forEach(obj => 
+        document.querySelector("#catalogo").innerHTML += criarCardProduto(obj))
+}
+
+function filtrar(lista){
+    document.querySelector("#catalogo").innerHTML = ""
+    lista.forEach(obj => 
+        document.querySelector("#catalogo").innerHTML += criarCardProduto(obj)
+    )
 }
 
 function cadastrar(){
@@ -31,12 +35,14 @@ function cadastrar(){
 
     // Criando uma variável para armazenar toda a lista de variáveis do modal
     const produto = {
+        id: Date.now(),
         imgProduto,
         dsImgProduto,
         vlProduto,
         nmProduto,
         dsProduto,
-        qtdEstoque
+        qtdEstoque,
+        adicionadoAoCarrinho: false
     }
 
     //Validando os campos
@@ -47,9 +53,7 @@ function cadastrar(){
     if(!isValid(produto.vlProduto, document.querySelector("#vlProduto"))) return
     if(!isValid(produto.qtdEstoque, document.querySelector("#qtdEstoque"))) return
 
-    listProdutos.push(produto)
-    //Salvar na memória do navegador os produtos em JSON
-    localStorage.setItem("listProdutos", JSON.stringify(listProdutos))
+    catalogo.push(produto)
 
     loadPage()
 
@@ -69,12 +73,21 @@ function isValid(valor, campo){
 }
 
 // Removendo o card pela hierarquia
-function apagar(botao){
-    botao.parentNode.parentNode.parentNode.parentNode.remove()
+function apagar(id){
+    catalogo = catalogo.filter(obj => obj.id !== id)
+    loadPage()
+}
+
+function adicionarAoCarrinho(id){
+    let seleçãoCompraEncontrado = catalogo.find(obj => obj.id == id)
+    seleçãoCompraEncontrado.adicionadoAoCarrinho = true
+    loadPage()
 }
 
 // Função responsável por criar os produtos
 function criarCardProduto(produto){
+    let disabled = produto.adicionadoAoCarrinho ? "disabled" : ""
+
     const card = 
     `
     <div class="col-lg-3 col-md-6 col-sm-12">
@@ -97,10 +110,10 @@ function criarCardProduto(produto){
 
             <div class="card-footer">
                 <form class="d-block">
-                    <button class="btn btn-success">
+                    <button class="btn btn-success ${disabled}" onClick="adicionarAoCarrinho(${produto.id})">
                         Adicionar ao carrinho
                     </button>
-                    <a href="#" onClick="apagar(this)" class="btn btn-danger" title="Apagar produto">
+                    <a href="#" onClick="apagar(${produto.id})" class="btn btn-danger" title="Apagar produto">
                         <i class="bi bi-trash3"></i>
                     </a>
                 </form>
